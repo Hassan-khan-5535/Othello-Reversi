@@ -62,7 +62,7 @@ This project strictly follows the **Model-View-Controller (MVC)** architectural 
 ### Installation
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/YourUsername/Othello-Reversi-JavaFX.git](https://github.com/YourUsername/Othello-Reversi-JavaFX.git)
+    git clone [https://github.com/atifkhani397/Othello-Reversi-JavaFX.git](https://github.com/Hassan-khan-5535/Othello-Reversi-JavaFX.git)
     ```
 2.  **Open in IntelliJ IDEA**
     * File -> Open -> Select the project folder.
