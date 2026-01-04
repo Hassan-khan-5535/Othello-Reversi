@@ -51,6 +51,8 @@ This project strictly follows the **Model-View-Controller (MVC)** architectural 
 * Acts as the bridge between Logic and UI. It handles clicks, updates the model, and refreshes the view.
 
 ---
+## UML DIAGRAM 
+<img width="1254" height="1438" alt="image" src="https://github.com/user-attachments/assets/abe21998-9314-4a33-82ff-9caf9fe773c8" />
 
 ## 🚀 Getting Started
 
