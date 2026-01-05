@@ -114,8 +114,8 @@ src
 
 | Name | Student ID | Role |
 | :--- | :--- | :--- |
-| **Muhammad Atif** | FA24-BSE-011 | Lead Developer & UI/UX |
-| **Hassan Khan** | FA24-BSE-004 | Backend Logic & Testing |
+| **Muhammad Atif** | FA24-BSE-011 | Backend Logic & Testing |
+| **Hassan Khan** | FA24-BSE-004 | Lead Developer & UI/UX |
 
 * **Course:** Object Oriented Programming (OOP)
 * **University:** COMSATS University Islamabad, Abbottabad Campus
