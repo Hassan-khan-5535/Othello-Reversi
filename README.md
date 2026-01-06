@@ -51,6 +51,8 @@ This project strictly follows the **Model-View-Controller (MVC)** architectural 
 * Acts as the bridge between Logic and UI. It handles clicks, updates the model, and refreshes the view.
 
 ---
+## UML DIAGRAM 
+<img width="1254" height="1438" alt="image" src="https://github.com/user-attachments/assets/abe21998-9314-4a33-82ff-9caf9fe773c8" />
 
 ## 🚀 Getting Started
 
@@ -62,7 +64,7 @@ This project strictly follows the **Model-View-Controller (MVC)** architectural 
 ### Installation
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/YourUsername/Othello-Reversi-JavaFX.git](https://github.com/YourUsername/Othello-Reversi-JavaFX.git)
+    git clone [https://github.com/atifkhani397/Othello-Reversi-JavaFX.git](https://github.com/Hassan-khan-5535/Othello-Reversi-JavaFX.git)
     ```
 2.  **Open in IntelliJ IDEA**
     * File -> Open -> Select the project folder.
@@ -112,8 +114,8 @@ src
 
 | Name | Student ID | Role |
 | :--- | :--- | :--- |
-| **Muhammad Atif** | FA24-BSE-011 | Lead Developer & UI/UX |
-| **Hassan Khan** | FA24-BSE-004 | Backend Logic & Testing |
+| **Muhammad Atif** | FA24-BSE-011 | Backend Logic & Testing |
+| **Hassan Khan** | FA24-BSE-004 | Lead Developer & UI/UX |
 
 * **Course:** Object Oriented Programming (OOP)
 * **University:** COMSATS University Islamabad, Abbottabad Campus
