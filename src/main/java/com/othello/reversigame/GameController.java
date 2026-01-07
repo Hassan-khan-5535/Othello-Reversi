@@ -2,7 +2,7 @@
 
 
 package com.othello.reversigame;
-
+import javafx.application.Platform;
 import javafx.animation.PauseTransition;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -75,16 +75,22 @@ public class GameController {
     }
 
     private void handleHumanMove(int row, int col) {
+        // 1. Stop if game is over or AI is thinking
         if (model.isGameOver() || model.isAiTurn()) return;
 
+        // 2. Attempt Human Move
         if (model.playMove(row, col)) {
-            updateView();
+            updateView(); // Show move immediately
 
+            // 3. CRITICAL: Check Game Over immediately after Human plays
             if (checkGameOver()) return;
+
+            // 4. Check if AI has no moves (Turn passes back to Human)
             checkTurnSkipped();
 
+            // 5. If it is now AI's turn, schedule the AI move
             if (model.isAiTurn()) {
-                PauseTransition pause = new PauseTransition(Duration.seconds(1.0));
+                PauseTransition pause = new PauseTransition(Duration.seconds(0.7));
                 pause.setOnFinished(e -> performAiMove());
                 pause.play();
             }
@@ -92,14 +98,21 @@ public class GameController {
     }
 
     private void performAiMove() {
+        // Safety: Don't play if game ended
         if (model.isGameOver()) return;
 
+        // 1. AI Performs Move
         model.playAiMove();
         updateView();
 
+        // 2. CRITICAL: Check Game Over immediately after AI plays
+        // This catches "Board Full" or "Wipeout" instantly
         if (checkGameOver()) return;
+
+        // 3. Check if Human has no moves (Turn passes back to AI)
         checkTurnSkipped();
 
+        // 4. Loop: If Human was skipped and it's AI's turn again, play again
         if (model.isAiTurn() && !model.isGameOver()) {
             PauseTransition pause = new PauseTransition(Duration.seconds(1.0));
             pause.setOnFinished(e -> performAiMove());
@@ -107,12 +120,20 @@ public class GameController {
         }
     }
 
+    // Updated to strictly detect ALL winning conditions
     private boolean checkGameOver() {
         Board b = model.getBoard();
         int black = b.getCount(Piece.BLACK);
         int white = b.getCount(Piece.WHITE);
 
-        if (model.isGameOver() || black == 0 || white == 0 || (black + white == 64)) {
+        // Force Game Over if:
+        // 1. Board is Full (64 pieces)
+        // 2. One player has 0 pieces (Wipeout)
+        // 3. Model logic says game over (No moves for both)
+        boolean isBoardFull = (black + white) == 64;
+        boolean isWipeout = (black == 0) || (white == 0);
+
+        if (model.isGameOver() || isBoardFull || isWipeout) {
             showGameOverDialog();
             return true;
         }
