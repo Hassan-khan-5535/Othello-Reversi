@@ -14,9 +14,11 @@ A fully functional, object-oriented implementation of the classic board game **O
 
 ---
 ## PLayer vs Player GUI
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/91407a7c-52d7-4ab4-bb8d-059a1b00ad83" />
 
+---
+## PLayer vs Computer GUI
+<img width="1920" height="1080" alt="image" src="pvc_mode.png">
 
 ---
 
